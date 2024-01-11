@@ -1,16 +1,33 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { PrivyProvider } from '@privy-io/react-auth';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { PrivyProvider } from "@privy-io/react-auth";
+import Logo from "./images/POMOlogo-transparent.png";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <PrivyProvider
-      appId={process.env.REACT_APP_PRIVY_APP_ID}
-      onSuccess={(user) => console.log(`User ${user.id} logged in!`)}
+      appId="clpsfocoe00vbk00fphyo1ndu"
+      config={{
+        appearance: {
+          accentColor: "#6A6FF5",
+          theme: "#FFFFFF",
+          showWalletLoginFirst: false,
+          logo: Logo,
+        },
+        loginMethods: ["sms"],
+        embeddedWallets: {
+          createOnLogin: "users-without-wallets",
+          requireUserPasswordOnCreate: true,
+        },
+        mfa: { noPromptOnMfaRequired: false },
+        intl: {
+          defaultCountry: "TW",
+        },
+      }}
     >
       <App />
     </PrivyProvider>
