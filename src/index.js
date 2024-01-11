@@ -18,7 +18,7 @@ root.render(
           showWalletLoginFirst: false,
           logo: Logo,
         },
-        loginMethods: ["sms"],
+        // loginMethods: ["sms"],
         embeddedWallets: {
           createOnLogin: "users-without-wallets",
           requireUserPasswordOnCreate: true,
