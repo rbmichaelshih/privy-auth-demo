@@ -10,7 +10,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <PrivyProvider
-      appId="clpsfocoe00vbk00fphyo1ndu"
+      appId={process.env.REACT_APP_PRIVY_APP_ID}
       config={{
         appearance: {
           accentColor: "#6A6FF5",
